@@ -1,3 +1,5 @@
+# The following code can be ran to perform analysis on a cleaned HRS dataset. It includes functions like correlation table, LASSO regression, and AUC curve evaluation.
+
 library(car)
 library(haven)
 library(corrplot)
@@ -137,7 +139,7 @@ table(cleandata$T3_DefAlive)
 cleandata$T3_DefAlive <- as.factor(cleandata$T3_DefAlive)
 levels(cleandata$T3_DefAlive) <- c("mortality", "alive")
 table(cleandata$T3_DefAlive)
-skim(cleandata)  #这里想写成表，所有数据四舍五入到小数点后两位
+skim(cleandata) 
 ########################FULL MODEL PREDICTING RESILIENCE#############################
 #train control setting
 up_fitControl1 <- trainControl(method = "repeatedcv", repeats = 3, savePredictions = T, 
